@@ -116,7 +116,7 @@ const request1 = chainClientWasm.createQueryRequest(JSON.stringify(
     ['account', {
         snapshot_block: ['head', 0],
         first: 'eosio',
-        last: 'eosio.zzzzzz',
+        last: 'roxe.zzzzzz',
         max_results: 100,
         include_code: false,
         include_abi: false,

@@ -136,14 +136,14 @@ void process(get_liquid_request& req, const eosio::database_status& status) {
         .snapshot_block = req.block,
         .first =
             {
-                .code        = "eosio.token"_n,
+                .code        = "roxe.token"_n,
                 .table       = "accounts"_n,
                 .primary_key = system_token.code().raw(),
                 .scope       = req.first_account.value,
             },
         .last =
             {
-                .code        = "eosio.token"_n,
+                .code        = "roxe.token"_n,
                 .table       = "accounts"_n,
                 .primary_key = system_token.code().raw(),
                 .scope       = 0xffff'ffff'ffff'ffff,

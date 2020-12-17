@@ -245,10 +245,10 @@ const myClientWasm = await HistoryTools.createClientWasm({
 const request = myClientWasm.createQueryRequest(JSON.stringify(
     ['get.my.toks', {
         snapshot_block: ['head', 0],
-        code: 'eosio.token',
-        sym: 'EOS',
+        code: 'roxe.token',
+        sym: 'ROC',
         first_account: 'eosio',
-        last_account: 'eosio.zzzzzz',
+        last_account: 'roxe.zzzzzz',
         max_results: 10,
     }]
 ));

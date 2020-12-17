@@ -100,8 +100,8 @@ class AppState {
 
     public tokensMultAccArgs = {
         snapshot_block: 100000000,
-        code: 'eosio.token',
-        sym: 'EOS',
+        code: 'roxe.token',
+        sym: 'ROC',
         first_account: '',
         last_account: '',
         max_results: 10,

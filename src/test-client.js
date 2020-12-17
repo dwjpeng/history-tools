@@ -245,8 +245,8 @@ async function dump_eos_balances(snapshot_block, clientWasm, first_account, last
     do {
         const reply = await clientWasm.round_trip(['bal.mult.acc', {
             snapshot_block,
-            code: 'eosio.token',
-            sym: 'EOS',
+            code: 'roxe.token',
+            sym: 'ROC',
             first_account: first_account,
             last_account: last_account,
             max_results: 100,
@@ -274,15 +274,15 @@ async function dump_tokens(clientWasm, account, snapshot_block, first_key, last_
 
 async function dump_transfers(clientWasm) {
     let first_key = {
-        receiver: 'eosio.bpay',
-        account: 'eosio.token',
+        receiver: 'roxe.bpay',
+        account: 'roxe.token',
         block: ['absolute', 0],
         transaction_id: '0000000000000000000000000000000000000000000000000000000000000000',
         action_ordinal: 0,
     };
     let last_key = {
-        receiver: 'eosio.bpay',
-        account: 'eosio.token',
+        receiver: 'roxe.bpay',
+        account: 'roxe.token',
         block: ['irreversible', 0],
         transaction_id: 'ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff',
         action_ordinal: 0xffffffff,
@@ -324,13 +324,13 @@ async function dump_transfers(clientWasm) {
         console.log();
         await dump_tapos(chainWasm, ["head", -3], 0);
         console.log();
-        await dump_accounts(chainWasm, ["irreversible", 0], 'eosio', 'eosio.bpay')
+        await dump_accounts(chainWasm, ["irreversible", 0], 'roxe', 'roxe.bpay')
         console.log();
-        await get_abi(chainWasm, ['eosio', 'eosio.token', 'eosio.null', 'eosio.nope']);
+        await get_abi(chainWasm, ['eosio', 'roxe.token', 'roxe.null', 'roxe.nope']);
         console.log();
-        await get_code(chainWasm, ['eosio.null']);
+        await get_code(chainWasm, ['roxe.null']);
         console.log();
-        await dump_eos_balances(["head", 0], tokenWasm, 'eosio', 'eosio.zzzzzzj');
+        await dump_eos_balances(["head", 0], tokenWasm, 'eosio', 'roxe.zzzzzzj');
         console.log();
         await dump_tokens(tokenWasm, 'b1', ["irreversible", 0], { sym: '', code: '' }, { sym: 'ZZZZZZZ', code: 'zzzzzzzzzzzzj' });
         console.log();
